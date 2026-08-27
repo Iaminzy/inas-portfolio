@@ -190,6 +190,8 @@ export default function Hero() {
                                     to-cyan-400
                                     bg-clip-text
                                     text-transparent
+                                    font-serif
+                               
                                 "
               >
                 Inas Ahamed
@@ -212,14 +214,13 @@ export default function Hero() {
               className="
                                 mt-6
                                 max-w-xl
-                                text-lg
+                                text-sm
                                 leading-8
                                 text-gray-400
+                                 tracking-[2px]
                             "
             >
-              I design and build modern, scalable and
-              interactive web applications using Next.js,
-              React, TypeScript and AI-powered technologies.
+              I build modern digital experiences that combine thoughtful design, powerful technology, and intelligent solutions. From responsive web applications to interactive interfaces, I work with React, Next.js, TypeScript, JavaScript, and AI-powered technologies to turn ideas into scalable products.
             </p>
 
             {/* Buttons */}
@@ -412,13 +413,7 @@ export default function Hero() {
                     "
         >
           <span
-            className="
-                            mb-2
-                            text-sm
-                            uppercase
-                            tracking-widest
-                        "
-          >
+            className=" mb-2text-sm uppercase tracking-widest">
             Scroll
           </span>
 

@@ -9,14 +9,14 @@ import {
     useGLTF,
 } from "@react-three/drei";
 
-function DroneModel() {
-    const { scene } = useGLTF("/models/drone2.glb");
+function ManModel() {
+    const { scene } = useGLTF("/models/man.glb");
 
     return (
         <primitive
             object={scene}
-            scale={0.7}
-            position={[0, -0.5, 0]}
+            scale={1.5}
+            position={[0, -0.2, 0]}
         />
     );
 }
@@ -57,7 +57,7 @@ export default function Hero3D() {
                 rotationIntensity={0.25}
                 floatIntensity={0.6}
             >
-                <DroneModel />
+                <ManModel />
             </Float>
 
             {/* Shadow */}
@@ -73,10 +73,10 @@ export default function Hero3D() {
                 enableZoom={false}
                 enablePan={false}
                 autoRotate
-                autoRotateSpeed={0.8}
+                autoRotateSpeed={0}
             />
         </Canvas>
     );
 }
 
-useGLTF.preload("/models/drone2.glb");
+useGLTF.preload("/models/man.glb");
