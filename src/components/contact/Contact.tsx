@@ -226,7 +226,7 @@ export default function ContactHero() {
                         }}
                     >
                         <a
-                            href="#tech"
+                            href="#contact"
                             aria-label="Scroll to connect section"
                         >
                             <ArrowDown size={20} />
