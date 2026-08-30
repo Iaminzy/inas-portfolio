@@ -286,7 +286,7 @@ export default function Hero() {
 
               {/* Email */}
               <a
-                href="mailtoinasahamedofficial@gmail.com"
+                href="mailto:inasahamedofficial@gmail.com"
                 aria-label="Email"
                 className="
                   text-gray-400

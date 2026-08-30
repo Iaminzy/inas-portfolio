@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background: #030303;
+  background:black;
   color: white;
   overflow-x: hidden;
   width: 100%;
@@ -196,7 +196,7 @@ body {
       rgba(255, 255, 255, 0.05);
 
     backdrop-filter:
-      blur(20px);
+      blur(30px);
 
     border:
       1px solid rgba(255, 255, 255, 0.1);

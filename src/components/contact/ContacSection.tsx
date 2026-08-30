@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-
-
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -82,22 +80,21 @@ export default function ContactSection() {
             id="contact"
             className="relative overflow-hidden pb-28 md:pb-36"
         >
-            {/* Background Glow */}
-            <div className="w-full absolute inset-0 h-screen z-0">
-              
-            </div>
+            {/* =========================================
+                BACKGROUND AMBIENT GLOW
+            ========================================== */}
 
             <div
                 className="
                     pointer-events-none
                     absolute
-                    left-0
+                    left-[-150px]
                     top-1/3
-                    h-[400px]
-                    w-[400px]
+                    h-[450px]
+                    w-[450px]
                     rounded-full
-                    bg-purple-600/10
-                    blur-[150px]
+                    bg-purple-600/[0.08]
+                    blur-[160px]
                 "
             />
 
@@ -105,17 +102,19 @@ export default function ContactSection() {
                 className="
                     pointer-events-none
                     absolute
-                    bottom-0
-                    right-0
-                    h-[350px]
-                    w-[350px]
+                    bottom-[-120px]
+                    right-[-100px]
+                    h-[450px]
+                    w-[450px]
                     rounded-full
-                    bg-blue-600/10
-                    blur-[140px]
+                    bg-cyan-500/[0.07]
+                    blur-[160px]
                 "
             />
 
-            {/* Main Container */}
+            {/* =========================================
+                MAIN CONTAINER
+            ========================================== */}
 
             <div
                 className="
@@ -132,9 +131,10 @@ export default function ContactSection() {
                     lg:px-8
                 "
             >
-                {/* ================================= */}
-                {/* Contact Information                */}
-                {/* ================================= */}
+
+                {/* =========================================
+                    CONTACT INFORMATION
+                ========================================== */}
 
                 <motion.div
                     initial={{
@@ -152,204 +152,271 @@ export default function ContactSection() {
                         duration: 0.7,
                     }}
                     className="
-                        rounded-3xl
+                        group
+                        relative
+                        overflow-hidden
+                        rounded-[28px]
                         border
-                        border-white/10
+                        border-white/[0.10]
                         bg-white/[0.035]
                         p-7
-                        backdrop-blur-xl
+                        shadow-[0_25px_80px_rgba(0,0,0,0.35)]
+                        backdrop-blur-2xl
                         md:p-8
                     "
                 >
-                    <p
+
+                    {/* Top Glass Reflection */}
+
+                    <div
                         className="
-                            text-xs
-                            uppercase
-                            tracking-[0.3em]
-                            text-purple-400
+                            pointer-events-none
+                            absolute
+                            inset-x-8
+                            top-0
+                            h-px
+                            bg-gradient-to-r
+                            from-transparent
+                            via-white/30
+                            to-transparent
                         "
-                    >
-                        Contact Details
-                    </p>
+                    />
 
-                    <h2
+                    {/* Inner Purple Glow */}
+
+                    <div
                         className="
-                            mt-4
-                            text-3xl
-                            font-bold
-                            text-white
+                            pointer-events-none
+                            absolute
+                            -left-24
+                            -top-24
+                            h-64
+                            w-64
+                            rounded-full
+                            bg-purple-500/[0.08]
+                            blur-3xl
+                            transition-opacity
+                            duration-500
+                            group-hover:bg-purple-500/[0.12]
                         "
-                    >
-                        Let&apos;s connect.
-                    </h2>
+                    />
 
-                    <p
-                        className="
-                            mt-4
-                            text-sm
-                            leading-7
-                            text-gray-400
-                        "
-                    >
-                        Whether you have a project idea, a job
-                        opportunity, or simply want to say hello,
-                        feel free to reach out.
-                    </p>
+                    <div className="relative z-10">
 
-                    {/* Email */}
-
-                    <div className="mt-8 space-y-4">
-                        <a
-                            href="mailto:inasahamedofficial@gmail.com"
+                        <p
                             className="
-                                group
-                                flex
-                                items-center
-                                gap-4
-                                rounded-2xl
-                                border
-                                border-white/10
-                                bg-white/[0.03]
-                                p-4
-                                transition
-                                duration-300
-                                hover:border-purple-400/30
-                                hover:bg-white/[0.06]
+                                text-xs
+                                uppercase
+                                tracking-[0.3em]
+                                text-purple-400
                             "
                         >
+                            Contact Details
+                        </p>
+
+                        <h2
+                            className="
+                                mt-4
+                                text-3xl
+                                font-bold
+                                text-white
+                            "
+                        >
+                            Let&apos;s connect.
+                        </h2>
+
+                        <p
+                            className="
+                                mt-4
+                                text-sm
+                                leading-7
+                                text-gray-400
+                            "
+                        >
+                            Whether you have a project idea, a job
+                            opportunity, or simply want to say hello,
+                            feel free to reach out.
+                        </p>
+
+                        {/* Contact Items */}
+
+                        <div className="mt-8 space-y-4">
+
+                            {/* Email */}
+
+                            <a
+                                href="mailto:inasahamedofficial@gmail.com"
+                                className="
+                                    group/item
+                                    relative
+                                    flex
+                                    items-center
+                                    gap-4
+                                    overflow-hidden
+                                    rounded-2xl
+                                    border
+                                    border-white/[0.08]
+                                    bg-white/[0.025]
+                                    p-4
+                                    backdrop-blur-xl
+                                    transition-all
+                                    duration-300
+                                    hover:border-purple-400/30
+                                    hover:bg-white/[0.05]
+                                    hover:shadow-[0_10px_30px_rgba(139,92,246,0.08)]
+                                "
+                            >
+
+                                <div
+                                    className="
+                                        flex
+                                        h-11
+                                        w-11
+                                        shrink-0
+                                        items-center
+                                        justify-center
+                                        rounded-xl
+                                        border
+                                        border-purple-400/20
+                                        bg-purple-500/[0.08]
+                                        text-purple-400
+                                        transition
+                                        duration-300
+                                        group-hover/item:bg-purple-500/[0.15]
+                                        group-hover/item:shadow-[0_0_20px_rgba(139,92,246,0.15)]
+                                    "
+                                >
+                                    <Mail size={19} />
+                                </div>
+
+                                <div>
+                                    <p className="text-xs text-gray-500">
+                                        Email
+                                    </p>
+
+                                    <p className="mt-1 text-sm text-gray-300">
+                                        inasahamedofficial@gmail.com
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* Location */}
+
                             <div
                                 className="
                                     flex
-                                    h-11
-                                    w-11
-                                    shrink-0
                                     items-center
-                                    justify-center
-                                    rounded-xl
+                                    gap-4
+                                    rounded-2xl
                                     border
-                                    border-white/10
-                                    bg-white/5
-                                    text-purple-400
+                                    border-white/[0.08]
+                                    bg-white/[0.025]
+                                    p-4
+                                    backdrop-blur-xl
                                 "
                             >
-                                <Mail size={19} />
+
+                                <div
+                                    className="
+                                        flex
+                                        h-11
+                                        w-11
+                                        shrink-0
+                                        items-center
+                                        justify-center
+                                        rounded-xl
+                                        border
+                                        border-cyan-400/20
+                                        bg-cyan-500/[0.08]
+                                        text-cyan-400
+                                    "
+                                >
+                                    <MapPin size={19} />
+                                </div>
+
+                                <div>
+                                    <p className="text-xs text-gray-500">
+                                        Location
+                                    </p>
+
+                                    <p className="mt-1 text-sm text-gray-300">
+                                        Sri Lanka
+                                    </p>
+                                </div>
+
                             </div>
 
-                            <div>
-                                <p className="text-xs text-gray-500">
-                                    Email
-                                </p>
-
-                                <p className="mt-1 text-sm text-gray-300">
-                                    inasahamedofficial@gmail.com
-                                </p>
-                            </div>
-                        </a>
-
-                        {/* Location */}
-
-                        <div
-                            className="
-                                flex
-                                items-center
-                                gap-4
-                                rounded-2xl
-                                border
-                                border-white/10
-                                bg-white/[0.03]
-                                p-4
-                            "
-                        >
-                            <div
-                                className="
-                                    flex
-                                    h-11
-                                    w-11
-                                    shrink-0
-                                    items-center
-                                    justify-center
-                                    rounded-xl
-                                    border
-                                    border-white/10
-                                    bg-white/5
-                                    text-blue-400
-                                "
-                            >
-                                <MapPin size={19} />
-                            </div>
-
-                            <div>
-                                <p className="text-xs text-gray-500">
-                                    Location
-                                </p>
-
-                                <p className="mt-1 text-sm text-gray-300">
-                                    Sri Lanka
-                                </p>
-                            </div>
                         </div>
-                    </div>
 
-                    {/* Social Links */}
+                        {/* Social Links */}
 
-                    <div className="mt-8 flex gap-3">
-                        <a
-                            href="https://github.com/YOUR_USERNAME"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                items-center
-                                justify-center
-                                rounded-xl
-                                border
-                                border-white/10
-                                bg-white/5
-                                text-gray-400
-                                transition
-                                duration-300
-                                hover:border-purple-400/30
-                                hover:bg-purple-500/10
-                                hover:text-white
-                            "
-                        >
-                            <FaGithub size={19} />
-                        </a>
+                        <div className="mt-8 flex gap-3">
 
-                        <a
-                            href="https://linkedin.com/in/YOUR_USERNAME"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                items-center
-                                justify-center
-                                rounded-xl
-                                border
-                                border-white/10
-                                bg-white/5
-                                text-gray-400
-                                transition
-                                duration-300
-                                hover:border-blue-400/30
-                                hover:bg-blue-500/10
-                                hover:text-white
-                            "
-                        >
-                            <FaLinkedin size={19} />
-                        </a>
+                            <a
+                                href="https://github.com/YOUR_USERNAME"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                                className="
+                                    flex
+                                    h-11
+                                    w-11
+                                    items-center
+                                    justify-center
+                                    rounded-xl
+                                    border
+                                    border-white/[0.08]
+                                    bg-white/[0.035]
+                                    text-gray-400
+                                    backdrop-blur-xl
+                                    transition-all
+                                    duration-300
+                                    hover:border-purple-400/30
+                                    hover:bg-purple-500/[0.10]
+                                    hover:text-white
+                                    hover:shadow-[0_0_25px_rgba(139,92,246,0.12)]
+                                "
+                            >
+                                <FaGithub size={19} />
+                            </a>
+
+                            <a
+                                href="https://linkedin.com/in/YOUR_USERNAME"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                className="
+                                    flex
+                                    h-11
+                                    w-11
+                                    items-center
+                                    justify-center
+                                    rounded-xl
+                                    border
+                                    border-white/[0.08]
+                                    bg-white/[0.035]
+                                    text-gray-400
+                                    backdrop-blur-xl
+                                    transition-all
+                                    duration-300
+                                    hover:border-cyan-400/30
+                                    hover:bg-cyan-500/[0.10]
+                                    hover:text-white
+                                    hover:shadow-[0_0_25px_rgba(6,182,212,0.12)]
+                                "
+                            >
+                                <FaLinkedin size={19} />
+                            </a>
+
+                        </div>
+
                     </div>
                 </motion.div>
 
-                {/* ================================= */}
-                {/* Contact Form                      */}
-                {/* ================================= */}
+
+                {/* =========================================
+                    CONTACT FORM
+                ========================================== */}
 
                 <motion.div
                     initial={{
@@ -368,300 +435,431 @@ export default function ContactSection() {
                         delay: 0.1,
                     }}
                     className="
+                        group
                         relative
                         overflow-hidden
-                        rounded-3xl
+                        rounded-[28px]
                         border
-                        border-white/10
+                        border-white/[0.10]
                         bg-white/[0.035]
-                        p-7
-                        backdrop-blur-xl
-                        md:p-8
+                        p-1
+                        shadow-[0_25px_80px_rgba(0,0,0,0.4)]
+                        backdrop-blur-2xl
                     "
                 >
-                    {/* Card Glow */}
+
+                    {/* =====================================
+                        OUTER GLASS HIGHLIGHT
+                    ====================================== */}
 
                     <div
                         className="
                             pointer-events-none
                             absolute
-                            -right-24
-                            -top-24
-                            h-56
-                            w-56
-                            rounded-full
-                            bg-purple-500/10
-                            blur-3xl
+                            inset-x-8
+                            top-0
+                            h-px
+                            bg-gradient-to-r
+                            from-transparent
+                            via-white/40
+                            to-transparent
                         "
                     />
 
-                    <div className="relative">
-                        <p
+                    {/* Purple Ambient Glow */}
+
+                    <div
+                        className="
+                            pointer-events-none
+                            absolute
+                            -right-32
+                            -top-32
+                            h-72
+                            w-72
+                            rounded-full
+                            bg-purple-500/[0.10]
+                            blur-[90px]
+                            transition
+                            duration-500
+                            group-hover:bg-purple-500/[0.16]
+                        "
+                    />
+
+                    {/* Cyan Ambient Glow */}
+
+                    <div
+                        className="
+                            pointer-events-none
+                            absolute
+                            -bottom-32
+                            -left-32
+                            h-72
+                            w-72
+                            rounded-full
+                            bg-cyan-500/[0.06]
+                            blur-[90px]
+                        "
+                    />
+
+                    {/* =====================================
+                        INNER GLASS
+                    ====================================== */}
+
+                    <div
+                        className="
+                            relative
+                            z-10
+                            rounded-[24px]
+                            border
+                            border-white/[0.06]
+                            bg-black/[0.28]
+                            p-6
+                            backdrop-blur-2xl
+                            md:p-8
+                        "
+                    >
+
+                        {/* Inner Top Reflection */}
+
+                        <div
                             className="
-                                text-xs
-                                uppercase
-                                tracking-[0.3em]
-                                text-blue-400
+                                pointer-events-none
+                                absolute
+                                inset-x-8
+                                top-0
+                                h-px
+                                bg-gradient-to-r
+                                from-transparent
+                                via-white/20
+                                to-transparent
                             "
-                        >
-                            Send a Message
-                        </p>
+                        />
 
-                        <h2
-                            className="
-                                mt-4
-                                text-2xl
-                                font-semibold
-                                text-white
-                            "
-                        >
-                            Tell me about your project
-                        </h2>
+                        <div className="relative">
 
-                        <form
-                            onSubmit={handleSubmit}
-                            className="mt-8 space-y-5"
-                        >
-                            {/* Name */}
-
-                            <div>
-                                <label
-                                    htmlFor="name"
-                                    className="
-                                        mb-2
-                                        block
-                                        text-sm
-                                        text-gray-400
-                                    "
-                                >
-                                    Your Name
-                                </label>
-
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    required
-                                    maxLength={80}
-                                    autoComplete="name"
-                                    placeholder="Enter your name"
-                                    className="
-                                        w-full
-                                        rounded-2xl
-                                        border
-                                        border-white/10
-                                        bg-black/20
-                                        px-4
-                                        py-3.5
-                                        text-sm
-                                        text-white
-                                        outline-none
-                                        placeholder:text-gray-600
-                                        transition
-                                        focus:border-purple-400/40
-                                        focus:bg-white/[0.04]
-                                    "
-                                />
-                            </div>
-
-                            {/* Email */}
-
-                            <div>
-                                <label
-                                    htmlFor="email"
-                                    className="
-                                        mb-2
-                                        block
-                                        text-sm
-                                        text-gray-400
-                                    "
-                                >
-                                    Email Address
-                                </label>
-
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    required
-                                    maxLength={254}
-                                    autoComplete="email"
-                                    placeholder="you@example.com"
-                                    className="
-                                        w-full
-                                        rounded-2xl
-                                        border
-                                        border-white/10
-                                        bg-black/20
-                                        px-4
-                                        py-3.5
-                                        text-sm
-                                        text-white
-                                        outline-none
-                                        placeholder:text-gray-600
-                                        transition
-                                        focus:border-purple-400/40
-                                        focus:bg-white/[0.04]
-                                    "
-                                />
-                            </div>
-
-                            {/* Message */}
-
-                            <div>
-                                <label
-                                    htmlFor="message"
-                                    className="
-                                        mb-2
-                                        block
-                                        text-sm
-                                        text-gray-400
-                                    "
-                                >
-                                    Message
-                                </label>
-
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    maxLength={3000}
-                                    rows={5}
-                                    placeholder="Tell me about your project..."
-                                    className="
-                                        w-full
-                                        resize-none
-                                        rounded-2xl
-                                        border
-                                        border-white/10
-                                        bg-black/20
-                                        px-4
-                                        py-3.5
-                                        text-sm
-                                        text-white
-                                        outline-none
-                                        placeholder:text-gray-600
-                                        transition
-                                        focus:border-purple-400/40
-                                        focus:bg-white/[0.04]
-                                    "
-                                />
-                            </div>
-
-                            {/* Honeypot */}
-
-                            <div
-                                className="absolute left-[-9999px]"
-                                aria-hidden="true"
-                            >
-                                <label htmlFor="website">
-                                    Website
-                                </label>
-
-                                <input
-                                    id="website"
-                                    name="website"
-                                    type="text"
-                                    tabIndex={-1}
-                                    autoComplete="off"
-                                />
-                            </div>
-
-                            {/* Status */}
-
-                            {status.message && (
-                                <motion.div
-                                    initial={{
-                                        opacity: 0,
-                                        y: 10,
-                                    }}
-                                    animate={{
-                                        opacity: 1,
-                                        y: 0,
-                                    }}
-                                    role="alert"
-                                    aria-live="polite"
-                                    className={`
-                                        rounded-2xl
-                                        border
-                                        px-4
-                                        py-3
-                                        text-sm
-                                        ${status.type === "success"
-                                            ? "border-green-400/20 bg-green-400/10 text-green-300"
-                                            : "border-red-400/20 bg-red-400/10 text-red-300"
-                                        }
-                                    `}
-                                >
-                                    {status.message}
-                                </motion.div>
-                            )}
-
-                            {/* Submit */}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
+                            <p
                                 className="
-                                    group
-                                    flex
-                                    w-full
-                                    items-center
-                                    justify-center
-                                    gap-2
-                                    rounded-2xl
-                                    bg-gradient-to-r
-                                    from-purple-600
-                                    to-blue-500
-                                    px-6
-                                    py-3.5
-                                    text-sm
-                                    font-semibold
-                                    text-white
-                                    shadow-lg
-                                    shadow-purple-500/10
-                                    transition
-                                    duration-300
-                                    hover:scale-[1.02]
-                                    hover:shadow-purple-500/25
-                                    disabled:cursor-not-allowed
-                                    disabled:opacity-60
-                                    disabled:hover:scale-100
+                                    text-xs
+                                    uppercase
+                                    tracking-[0.3em]
+                                    text-purple-400
                                 "
                             >
-                                {isSubmitting ? (
-                                    <>
-                                        <span
-                                            className="
-                                                h-4
-                                                w-4
-                                                animate-spin
-                                                rounded-full
-                                                border-2
-                                                border-white/30
-                                                border-t-white
-                                            "
-                                        />
+                                Send a Message
+                            </p>
 
-                                        Sending...
-                                    </>
-                                ) : (
-                                    <>
-                                        Send Message
+                            <h2
+                                className="
+                                    mt-4
+                                    text-2xl
+                                    font-semibold
+                                    text-white
+                                "
+                            >
+                                Tell me about your project
+                            </h2>
 
-                                        <Send
-                                            size={17}
-                                            className="
-                                                transition
-                                                duration-300
-                                                group-hover:translate-x-1
-                                                group-hover:-translate-y-1
-                                            "
-                                        />
-                                    </>
+                            <form
+                                onSubmit={handleSubmit}
+                                className="mt-8 space-y-5"
+                            >
+
+                                {/* Name */}
+
+                                <div>
+                                    <label
+                                        htmlFor="name"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            text-gray-400
+                                        "
+                                    >
+                                        Your Name
+                                    </label>
+
+                                    <input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        required
+                                        maxLength={80}
+                                        autoComplete="name"
+                                        placeholder="Enter your name"
+                                        className="
+                                            w-full
+                                            rounded-2xl
+                                            border
+                                            border-white/[0.09]
+                                            bg-white/[0.025]
+                                            px-4
+                                            py-3.5
+                                            text-sm
+                                            text-white
+                                            outline-none
+                                            shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+                                            backdrop-blur-xl
+                                            placeholder:text-gray-600
+                                            transition-all
+                                            duration-300
+                                            hover:border-white/[0.16]
+                                            hover:bg-white/[0.04]
+                                            focus:border-purple-400/50
+                                            focus:bg-purple-500/[0.035]
+                                            focus:ring-1
+                                            focus:ring-purple-400/20
+                                            focus:shadow-[0_0_25px_rgba(139,92,246,0.10)]
+                                        "
+                                    />
+                                </div>
+
+                                {/* Email */}
+
+                                <div>
+                                    <label
+                                        htmlFor="email"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            text-gray-400
+                                        "
+                                    >
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        required
+                                        maxLength={254}
+                                        autoComplete="email"
+                                        placeholder="you@example.com"
+                                        className="
+                                            w-full
+                                            rounded-2xl
+                                            border
+                                            border-white/[0.09]
+                                            bg-white/[0.025]
+                                            px-4
+                                            py-3.5
+                                            text-sm
+                                            text-white
+                                            outline-none
+                                            shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+                                            backdrop-blur-xl
+                                            placeholder:text-gray-600
+                                            transition-all
+                                            duration-300
+                                            hover:border-white/[0.16]
+                                            hover:bg-white/[0.04]
+                                            focus:border-cyan-400/50
+                                            focus:bg-cyan-500/[0.035]
+                                            focus:ring-1
+                                            focus:ring-cyan-400/20
+                                            focus:shadow-[0_0_25px_rgba(6,182,212,0.10)]
+                                        "
+                                    />
+                                </div>
+
+                                {/* Message */}
+
+                                <div>
+                                    <label
+                                        htmlFor="message"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            text-gray-400
+                                        "
+                                    >
+                                        Message
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        required
+                                        maxLength={3000}
+                                        rows={5}
+                                        placeholder="Tell me about your project..."
+                                        className="
+                                            w-full
+                                            resize-none
+                                            rounded-2xl
+                                            border
+                                            border-white/[0.09]
+                                            bg-white/[0.025]
+                                            px-4
+                                            py-3.5
+                                            text-sm
+                                            text-white
+                                            outline-none
+                                            shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+                                            backdrop-blur-xl
+                                            placeholder:text-gray-600
+                                            transition-all
+                                            duration-300
+                                            hover:border-white/[0.16]
+                                            hover:bg-white/[0.04]
+                                            focus:border-purple-400/50
+                                            focus:bg-purple-500/[0.035]
+                                            focus:ring-1
+                                            focus:ring-purple-400/20
+                                            focus:shadow-[0_0_25px_rgba(139,92,246,0.10)]
+                                        "
+                                    />
+                                </div>
+
+                                {/* Honeypot */}
+
+                                <div
+                                    className="absolute left-[-9999px]"
+                                    aria-hidden="true"
+                                >
+                                    <label htmlFor="website">
+                                        Website
+                                    </label>
+
+                                    <input
+                                        id="website"
+                                        name="website"
+                                        type="text"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
+
+                                {/* Status */}
+
+                                {status.message && (
+                                    <motion.div
+                                        initial={{
+                                            opacity: 0,
+                                            y: 10,
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                        }}
+                                        role="alert"
+                                        aria-live="polite"
+                                        className={`
+                                            rounded-2xl
+                                            border
+                                            px-4
+                                            py-3
+                                            text-sm
+                                            backdrop-blur-xl
+                                            ${status.type === "success"
+                                                ? "border-green-400/20 bg-green-400/[0.08] text-green-300"
+                                                : "border-red-400/20 bg-red-400/[0.08] text-red-300"
+                                            }
+                                        `}
+                                    >
+                                        {status.message}
+                                    </motion.div>
                                 )}
-                            </button>
-                        </form>
+
+                                {/* Submit Button */}
+
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="
+                                        group/button
+                                        relative
+                                        flex
+                                        w-full
+                                        items-center
+                                        justify-center
+                                        gap-2
+                                        overflow-hidden
+                                        rounded-2xl
+                                        border
+                                        border-white/10
+                                        bg-gradient-to-r
+                                        from-purple-600/80
+                                        via-purple-500/70
+                                        to-blue-500/80
+                                        px-6
+                                        py-3.5
+                                        text-sm
+                                        font-semibold
+                                        text-white
+                                        shadow-[0_10px_35px_rgba(99,102,241,0.15)]
+                                        backdrop-blur-xl
+                                        transition-all
+                                        duration-300
+                                        hover:scale-[1.01]
+                                        hover:border-white/20
+                                        hover:shadow-[0_15px_45px_rgba(99,102,241,0.25)]
+                                        active:scale-[0.99]
+                                        disabled:cursor-not-allowed
+                                        disabled:opacity-60
+                                        disabled:hover:scale-100
+                                    "
+                                >
+
+                                    {/* Button Shine */}
+
+                                    <span
+                                        className="
+                                            pointer-events-none
+                                            absolute
+                                            inset-0
+                                            -translate-x-full
+                                            bg-gradient-to-r
+                                            from-transparent
+                                            via-white/20
+                                            to-transparent
+                                            transition-transform
+                                            duration-700
+                                            group-hover/button:translate-x-full
+                                        "
+                                    />
+
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        {isSubmitting ? (
+                                            <>
+                                                <span
+                                                    className="
+                                                        h-4
+                                                        w-4
+                                                        animate-spin
+                                                        rounded-full
+                                                        border-2
+                                                        border-white/30
+                                                        border-t-white
+                                                    "
+                                                />
+
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Send Message
+
+                                                <Send
+                                                    size={17}
+                                                    className="
+                                                        transition
+                                                        duration-300
+                                                        group-hover/button:translate-x-1
+                                                        group-hover/button:-translate-y-1
+                                                    "
+                                                />
+                                            </>
+                                        )}
+                                    </span>
+
+                                </button>
+
+                            </form>
+                        </div>
                     </div>
                 </motion.div>
             </div>

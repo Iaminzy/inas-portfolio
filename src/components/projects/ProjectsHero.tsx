@@ -170,7 +170,7 @@ export default function ProjectsHero() {
 
             {/* Bottom Fade */}
 
-            <div
+            {/* <div
                 className="
                     pointer-events-none
                     absolute
@@ -182,7 +182,7 @@ export default function ProjectsHero() {
                     from-[#030303]
                     to-transparent
                 "
-            />
+            /> */}
         </section>
     );
 }

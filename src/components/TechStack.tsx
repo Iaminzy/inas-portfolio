@@ -23,6 +23,10 @@ import {
     SiGithub,
     SiThreedotjs,
     SiFramer,
+    SiPhp,
+    SiFirebase,
+    SiPostgresql,
+    SiBootstrap,
 } from "react-icons/si";
 
 const categories = [
@@ -36,6 +40,7 @@ const categories = [
             { name: "TypeScript", icon: SiTypescript },
             { name: "JavaScript", icon: SiJavascript },
             { name: "Tailwind CSS", icon: SiTailwindcss },
+            {name: "Bootstrap", icon: SiBootstrap },
         ],
     },
     {
@@ -46,6 +51,7 @@ const categories = [
             { name: "Node.js", icon: SiNodedotjs },
             { name: "Express.js", icon: SiExpress },
             { name: "Laravel", icon: SiLaravel },
+            { name: "PHP", icon: SiPhp }
         ],
     },
     {
@@ -55,6 +61,8 @@ const categories = [
         skills: [
             { name: "MongoDB", icon: SiMongodb },
             { name: "MySQL", icon: SiMysql },
+            { name: "Firebase", icon: SiFirebase },
+            { name: "PostgreSQL", icon: SiPostgresql },
         ],
     },
     {

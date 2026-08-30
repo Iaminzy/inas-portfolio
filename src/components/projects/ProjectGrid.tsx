@@ -51,7 +51,7 @@ const projects = [
         title: "WOW LMS",
         description:
             "A modern Learning Management System designed to provide students and instructors with an organized digital learning experience.",
-        image: "/projects/wow-lms.png",
+        image: "/projects/wowlms.png",
         technologies: [
             "Next.js",
             "TypeScript",
@@ -65,7 +65,7 @@ const projects = [
         title: "iKnowWay",
         description:
             "A social media platform focused on creating an interactive environment where users can connect, share content, and communicate.",
-        image: "/projects/iknowway.png",
+        image: "/projects/Iknowway.jfif",
         technologies: [
             "React",
             "Node.js",
@@ -79,7 +79,7 @@ const projects = [
         title: "Football Management System",
         description:
             "A desktop-based football management application developed to manage teams, players, matches, and related football information.",
-        image: "/projects/football-management.png",
+        image: "/projects/footballmgs.jfif",
         technologies: [
             "Java",
             "MySQL",
@@ -91,7 +91,7 @@ const projects = [
         title: "Clinic Management System",
         description:
             "A web-based clinic management system created to manage patients, appointments, medical information, and clinic operations.",
-        image: "/projects/clinic-management.png",
+        image: "/projects/ClinicMgs.jfif",
         technologies: [
             "PHP",
             "Bootstrap",
@@ -104,7 +104,7 @@ const projects = [
         title: "Employee CRUD System",
         description:
             "A lightweight employee management application demonstrating CRUD operations with a clean Laravel-based architecture.",
-        image: "/projects/employee-crud.png",
+        image: "/projects/EmpCrud.jfif",
         technologies: [
             "Laravel",
             "PHP",
