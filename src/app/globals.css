@@ -12,6 +12,133 @@ body {
   width: 100%;
 }
 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-angle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Gradient Border Travel */
+.gb-btn {
+  position: relative;
+  isolation: isolate;
+}
+
+.gb-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -2;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle), #8b5cf6, #22d3ee, #ec4899, #8b5cf6);
+  animation: spin-angle 3.2s linear infinite;
+}
+
+.gb-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: inherit;
+}
+
+/* Border Beam */
+.bb-btn {
+  position: relative;
+}
+
+.bb-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--angle),
+      transparent 0%, transparent 78%,
+      #22d3ee 86%, #ffffff 90%, #ec4899 94%,
+      transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-angle 2.4s linear infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gb-btn::before,
+  .bb-btn::before {
+    animation: none;
+  }
+}
+
+.glass-button-border {
+  position: relative;
+}
+
+.glass-button-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 9999px;
+
+  background: linear-gradient(90deg,
+      transparent 0%,
+      transparent 35%,
+      #8b5cf6 45%,
+      #06b6d4 50%,
+      transparent 65%,
+      transparent 100%);
+
+  background-size: 250% 100%;
+  background-position: 200% 50%;
+
+  animation: borderTravel 2.5s linear infinite;
+
+  /* Keep ONLY the border visible */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+
+  padding: 1px;
+}
+
+@keyframes borderTravel {
+  from {
+    background-position: 200% 50%;
+  }
+
+  to {
+    background-position: -50% 50%;
+  }
+}
+
+@keyframes borderBeam {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
 
 /* =========================
    Selection
