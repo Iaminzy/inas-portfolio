@@ -65,7 +65,7 @@ const projects = [
         title: "iKnowWay",
         description:
             "A social media platform focused on creating an interactive environment where users can connect, share content, and communicate.",
-        image: "/projects/Iknowway.jfif",
+        image: "/projects/IknowWay.jfif",
         technologies: [
             "React",
             "Node.js",
@@ -79,7 +79,7 @@ const projects = [
         title: "Football Management System",
         description:
             "A desktop-based football management application developed to manage teams, players, matches, and related football information.",
-        image: "/projects/footballmgs.jfif",
+        image: "/projects/FootballMgs.jfif",
         technologies: [
             "Java",
             "MySQL",
