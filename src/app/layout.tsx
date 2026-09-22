@@ -7,6 +7,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import PageTransition from "@/components/PageTransition";
 import SparkleBackground from "@/components/SparkleBackground";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -69,6 +70,7 @@ export default function RootLayout({
         </PageTransition>
 
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
